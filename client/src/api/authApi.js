@@ -5,7 +5,7 @@ import {
 
 const baseQuery = fetchBaseQuery({
 //   baseUrl: "http://localhost:5000/api/auth",
-baseUrl:"https://production-ready-multi-method.onrender.com",
+baseUrl:"https://production-ready-multi-method.onrender.com/api/auth",
   credentials: "include",
 
   prepareHeaders: (headers) => {

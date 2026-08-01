@@ -2,7 +2,6 @@
 node_modules/
 
 # Environment Variables
-.env
 client/.env
 server/.env
 
@@ -18,3 +17,4 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+config.bat

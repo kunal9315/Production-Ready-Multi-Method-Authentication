@@ -6,7 +6,13 @@ const router = express.Router()
 
 const { register, verifyOtp, setPassword, login, getProfile, refreshAccessToken, logout,resendOtp, forgotPassword, verifyForgotOtp, resetPassword, sendLoginOtp, verifyLoginOtp,sendPhoneLoginOtp, verifyPhoneLoginOtp } = require("../constrollers/auth.controller")
 
-router.post("/register", register)
+router.post("/register", (req, res) => {
+  console.log("Register route reached");
+  res.status(200).json({
+    success: true,
+    message: "Route is working",
+  });
+});
 router.post("/verify-otp", verifyOtp)
 router.post("/set-password", setPassword)
 router.post("/login",login)

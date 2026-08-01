@@ -4,8 +4,8 @@ import {
 } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-//   baseUrl: "http://localhost:5000/api/auth",
-baseUrl:"https://production-ready-multi-method.onrender.com/api/auth",
+  baseUrl: "http://localhost:5001/api/auth",
+// baseUrl:"https://production-ready-multi-method.onrender.com/api/auth",
   credentials: "include",
 
   prepareHeaders: (headers) => {

@@ -36,11 +36,11 @@ const register = async (req,res) =>{
             message: "Email or phone already registered"
         })
     }
-
+console.log("7. Creating OTP");
     // for generatingh the otp 
     const otp = Math.floor(100000 + Math.random() * 900000).toString()
 
-    console.log("Generated OTP:",otp)
+    console.log("8. OTP:", otp);
 
     // the hash otp 
     const otpHash = await bcrypt.hash(otp,10)

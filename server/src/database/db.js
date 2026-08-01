@@ -19,19 +19,31 @@
 
 const mongoose = require("mongoose");
 
+mongoose.set("strictQuery", true);
+
 const connectDB = async () => {
   try {
-    console.log("Connecting to MongoDB...",process.env.MONGODB_URI );
-    console.log("URI Exists:", !!process.env.MONGODB_URI);
+    if (!process.env.MONGODB_URI) {
+      throw new Error("MONGODB_URI is not defined");
+    }
 
-    const connection = await mongoose.connect(process.env.MONGODB_URI);
+    console.log("Connecting to MongoDB...", process.env.MONGODB_URI);
+
+    const connection = await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+      maxPoolSize: 10,
+      family: 4,
+    });
 
     console.log("MongoDB Connected:", connection.connection.host);
+    return connection;
   } catch (error) {
     console.error("MongoDB Connection Error:");
     console.error(error);
-
-    process.exit(1);
+    throw error;
   }
 };
 

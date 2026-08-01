@@ -8,7 +8,7 @@ const authRoutes = require("./routes/auth.routes");
 const app = express();
 // app.use(helmet());
 
-const CLIENT_URL = process.env.CLIENT_URL || "https://auth-app-404.vercel.app";
+const CLIENT_URL = process.env.CLIENT_URL || "https://auth-app-404.vercel.app/";
 
 const corsOptions = {
   origin: CLIENT_URL,

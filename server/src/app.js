@@ -6,7 +6,12 @@ const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/auth.routes");
 
 const app = express();
+const dns = require("dns");
 
+dns.setServers([
+  "8.8.8.8",
+  "8.8.4.4",
+]);
 // app.use(helmet());
 
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
